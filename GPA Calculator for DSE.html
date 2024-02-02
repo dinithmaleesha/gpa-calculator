@@ -4,386 +4,313 @@
 <head>
     <meta charset="utf-8">
     <title>GPA Calculator | DSE</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        h1,
-        h4 {
-            text-align: center;
-        }
-
-        table {
-            width: 50%;
-            border-collapse: collapse;
-        }
-
-        th {
-            background-color: #2d448a;
-            color: #fff;
-        }
-
-        th,
-        td {
-            padding: 10px;
-            border-bottom: 1px solid #2d448a;
-        }
-
-        th:first-child,
-        td:first-child {
-            width: 50px;
-            text-align: left;
-        }
-
-        th:nth-child(3),
-        td:nth-child(3) {
-            text-align: right;
-        }
-
-        .calculate-btn {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-
-        }
-
-        button {
-            background-color: #2d448a;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #1f3064;
-        }
-
-        .result-center {
-            font-size: 26px;
-            padding-top: 25px;
-            text-align: center;
-        }
-
-        .footer-content {
-            margin-top: 25px;
-            font-size: 11px;
-            text-align: center;
-        }
-
-        .text a {
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .text a:hover {
-            text-decoration: none;
-            color: inherit;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
-<body>
-    <h1>GPA Calculator</h1>
-    <h4>Diploma in Software Engineering</h4>
+<body class="bg-light">
+    <div class="container mt-5">
+        <h1 class="text-center">GPA Calculator</h1>
+        <h4 class="text-center">Diploma in Software Engineering</h4>
 
-    <table align="center">
-        <tr>
-            <th>#</th>
-            <th>Subject</th>
-            <th>Final Grade</th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>Introduction to Computer Sceience</td>
-            <td>
-                <select id="grade1">
-                    <option value="">Select grade</option>
-                    <option value="A+">A+</option>
-                    <option value="A">A</option>
-                    <option value="A-">A-</option>
-                    <option value="B+">B+</option>
-                    <option value="B">B</option>
-                    <option value="B-">B-</option>
-                    <option value="C+">C+</option>
-                    <option value="C">C</option>
-                    <option value="C-">C-</option>
-                    <option value="D+">D+</option>
-                    <option value="D">D</option>
-                    <option value="E">E</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Mathematics for Computing</td>
-            <td>
-                <select id="grade2">
-                    <option value="">Select grade</option>
-                    <option value="A+">A+</option>
-                    <option value="A">A</option>
-                    <option value="A-">A-</option>
-                    <option value="B+">B+</option>
-                    <option value="B">B</option>
-                    <option value="B-">B-</option>
-                    <option value="C+">C+</option>
-                    <option value="C">C</option>
-                    <option value="C-">C-</option>
-                    <option value="D+">D+</option>
-                    <option value="D">D</option>
-                    <option value="E">E</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Programming Fundamentals</td>
-            <td>
-                <select id="grade3">
-                    <option value="">Select grade</option>
-                    <option value="A+">A+</option>
-                    <option value="A">A</option>
-                    <option value="A-">A-</option>
-                    <option value="B+">B+</option>
-                    <option value="B">B</option>
-                    <option value="B-">B-</option>
-                    <option value="C+">C+</option>
-                    <option value="C">C</option>
-                    <option value="C-">C-</option>
-                    <option value="D+">D+</option>
-                    <option value="D">D</option>
-                    <option value="E">E</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>Electronics and Computer Architecture</td>
-            <td>
-                <select id="grade4">
-                    <option value="">Select grade</option>
-                    <option value="A+">A+</option>
-                    <option value="A">A</option>
-                    <option value="A-">A-</option>
-                    <option value="B+">B+</option>
-                    <option value="B">B</option>
-                    <option value="B-">B-</option>
-                    <option value="C+">C+</option>
-                    <option value="C">C</option>
-                    <option value="C-">C-</option>
-                    <option value="D+">D+</option>
-                    <option value="D">D</option>
-                    <option value="E">E</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>Object Oriented Programming</td>
-            <td>
-                <select id="grade5">
-                    <option value="">Select grade</option>
-                    <option value="A+">A+</option>
-                    <option value="A">A</option>
-                    <option value="A-">A-</option>
-                    <option value="B+">B+</option>
-                    <option value="B">B</option>
-                    <option value="B-">B-</option>
-                    <option value="C+">C+</option>
-                    <option value="C">C</option>
-                    <option value="C-">C-</option>
-                    <option value="D+">D+</option>
-                    <option value="D">D</option>
-                    <option value="E">E</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>6</td>
-            <td>Database Management Systems</td>
-            <td>
-                <select id="grade6">
-                    <option value="">Select grade</option>
-                    <option value="A+">A+</option>
-                    <option value="A">A</option>
-                    <option value="A-">A-</option>
-                    <option value="B+">B+</option>
-                    <option value="B">B</option>
-                    <option value="B-">B-</option>
-                    <option value="C+">C+</option>
-                    <option value="C">C</option>
-                    <option value="C-">C-</option>
-                    <option value="D+">D+</option>
-                    <option value="D">D</option>
-                    <option value="E">E</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>7</td>
-            <td>Computer Networks</td>
-            <td>
-                <select id="grade7">
-                    <option value="">Select grade</option>
-                    <option value="A+">A+</option>
-                    <option value="A">A</option>
-                    <option value="A-">A-</option>
-                    <option value="B+">B+</option>
-                    <option value="B">B</option>
-                    <option value="B-">B-</option>
-                    <option value="C+">C+</option>
-                    <option value="C">C</option>
-                    <option value="C-">C-</option>
-                    <option value="D+">D+</option>
-                    <option value="D">D</option>
-                    <option value="E">E</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>8</td>
-            <td>GUI Application Development</td>
-            <td>
-                <select id="grade8">
-                    <option value="">Select grade</option>
-                    <option value="A+">A+</option>
-                    <option value="A">A</option>
-                    <option value="A-">A-</option>
-                    <option value="B+">B+</option>
-                    <option value="B">B</option>
-                    <option value="B-">B-</option>
-                    <option value="C+">C+</option>
-                    <option value="C">C</option>
-                    <option value="C-">C-</option>
-                    <option value="D+">D+</option>
-                    <option value="D">D</option>
-                    <option value="E">E</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>9</td>
-            <td>Software Engineering</td>
-            <td>
-                <select id="grade9">
-                    <option value="">Select grade</option>
-                    <option value="A+">A+</option>
-                    <option value="A">A</option>
-                    <option value="A-">A-</option>
-                    <option value="B+">B+</option>
-                    <option value="B">B</option>
-                    <option value="B-">B-</option>
-                    <option value="C+">C+</option>
-                    <option value="C">C</option>
-                    <option value="C-">C-</option>
-                    <option value="D+">D+</option>
-                    <option value="D">D</option>
-                    <option value="E">E</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>10</td>
-            <td>Enterprise Application Development-1</td>
-            <td>
-                <select id="grade10">
-                    <option value="">Select grade</option>
-                    <option value="A+">A+</option>
-                    <option value="A">A</option>
-                    <option value="A-">A-</option>
-                    <option value="B+">B+</option>
-                    <option value="B">B</option>
-                    <option value="B-">B-</option>
-                    <option value="C+">C+</option>
-                    <option value="C">C</option>
-                    <option value="C-">C-</option>
-                    <option value="D+">D+</option>
-                    <option value="D">D</option>
-                    <option value="E">E</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>11</td>
-            <td>Operating System</td>
-            <td>
-                <select id="grade11">
-                    <option value="">Select grade</option>
-                    <option value="A+">A+</option>
-                    <option value="A">A</option>
-                    <option value="A-">A-</option>
-                    <option value="B+">B+</option>
-                    <option value="B">B</option>
-                    <option value="B-">B-</option>
-                    <option value="C+">C+</option>
-                    <option value="C">C</option>
-                    <option value="C-">C-</option>
-                    <option value="D+">C+</option>
-                    <option value="D">C</option>
-                    <option value="E">E</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>12</td>
-            <td>Developing Modern Web</td>
-            <td>
-                <select id="grade12">
-                    <option value="">Select grade</option>
-                    <option value="A+">A+</option>
-                    <option value="A">A</option>
-                    <option value="A-">A-</option>
-                    <option value="B+">B+</option>
-                    <option value="B">B</option>
-                    <option value="B-">B-</option>
-                    <option value="C+">C+</option>
-                    <option value="C">C</option>
-                    <option value="C-">C-</option>
-                    <option value="D+">C+</option>
-                    <option value="D">C</option>
-                    <option value="E">E</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>13</td>
-            <td>Business Solution Development Project</td>
-            <td>
-                <select id="grade13">
-                    <option value="">Select grade</option>
-                    <option value="A+">A+</option>
-                    <option value="A">A</option>
-                    <option value="A-">A-</option>
-                    <option value="B+">B+</option>
-                    <option value="B">B</option>
-                    <option value="B-">B-</option>
-                    <option value="C+">C+</option>
-                    <option value="C">C</option>
-                    <option value="C-">C-</option>
-                    <option value="D+">C+</option>
-                    <option value="D">C</option>
-                    <option value="E">E</option>
-                </select>
-            </td>
-        </tr>
-    </table>
+        <table class="table table-bordered mt-4">
+            <thead class="thead-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Subject</th>
+                    <th>Final Grade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Introduction to Computer Science</td>
+                    <td>
+                        <select class="form-control" id="grade1">
+                            <option value="0">Select grade</option>
+                            <option value="4.0">A+</option>
+                            <option value="4.0">A</option>
+                            <option value="3.7">A-</option>
+                            <option value="3.3">B+</option>
+                            <option value="3">B</option>
+                            <option value="2.7">B-</option>
+                            <option value="2.3">C+</option>
+                            <option value="2">C</option>
+                            <option value="1.7">C-</option>
+                            <option value="1.3">C+</option>
+                            <option value="1">C</option>
+                            <option value="0">E</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Mathematics for Computing</td>
+                    <td>
+                        <select class="form-control" id="grade2">
+                            <option value="0">Select grade</option>
+                            <option value="4.0">A+</option>
+                            <option value="4.0">A</option>
+                            <option value="3.7">A-</option>
+                            <option value="3.3">B+</option>
+                            <option value="3">B</option>
+                            <option value="2.7">B-</option>
+                            <option value="2.3">C+</option>
+                            <option value="2">C</option>
+                            <option value="1.7">C-</option>
+                            <option value="1.3">C+</option>
+                            <option value="1">C</option>
+                            <option value="0">E</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Programming Fundamentals</td>
+                    <td>
+                        <select class="form-control" id="grade3">
+                            <option value="0">Select grade</option>
+                            <option value="4.0">A+</option>
+                            <option value="4.0">A</option>
+                            <option value="3.7">A-</option>
+                            <option value="3.3">B+</option>
+                            <option value="3">B</option>
+                            <option value="2.7">B-</option>
+                            <option value="2.3">C+</option>
+                            <option value="2">C</option>
+                            <option value="1.7">C-</option>
+                            <option value="1.3">C+</option>
+                            <option value="1">C</option>
+                            <option value="0">E</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Electronics and Computer Architecture</td>
+                    <td>
+                        <select class="form-control" id="grade4">
+                            <option value="0">Select grade</option>
+                            <option value="4.0">A+</option>
+                            <option value="4.0">A</option>
+                            <option value="3.7">A-</option>
+                            <option value="3.3">B+</option>
+                            <option value="3">B</option>
+                            <option value="2.7">B-</option>
+                            <option value="2.3">C+</option>
+                            <option value="2">C</option>
+                            <option value="1.7">C-</option>
+                            <option value="1.3">C+</option>
+                            <option value="1">C</option>
+                            <option value="0">E</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Object Oriented Programming</td>
+                    <td>
+                        <select class="form-control" id="grade5">
+                            <option value="0">Select grade</option>
+                            <option value="4.0">A+</option>
+                            <option value="4.0">A</option>
+                            <option value="3.7">A-</option>
+                            <option value="3.3">B+</option>
+                            <option value="3">B</option>
+                            <option value="2.7">B-</option>
+                            <option value="2.3">C+</option>
+                            <option value="2">C</option>
+                            <option value="1.7">C-</option>
+                            <option value="1.3">C+</option>
+                            <option value="1">C</option>
+                            <option value="0">E</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Database Management Systems</td>
+                    <td>
+                        <select class="form-control" id="grade6">
+                            <option value="0">Select grade</option>
+                            <option value="4.0">A+</option>
+                            <option value="4.0">A</option>
+                            <option value="3.7">A-</option>
+                            <option value="3.3">B+</option>
+                            <option value="3">B</option>
+                            <option value="2.7">B-</option>
+                            <option value="2.3">C+</option>
+                            <option value="2">C</option>
+                            <option value="1.7">C-</option>
+                            <option value="1.3">C+</option>
+                            <option value="1">C</option>
+                            <option value="0">E</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Computer Networks</td>
+                    <td>
+                        <select class="form-control" id="grade7">
+                            <option value="0">Select grade</option>
+                            <option value="4.0">A+</option>
+                            <option value="4.0">A</option>
+                            <option value="3.7">A-</option>
+                            <option value="3.3">B+</option>
+                            <option value="3">B</option>
+                            <option value="2.7">B-</option>
+                            <option value="2.3">C+</option>
+                            <option value="2">C</option>
+                            <option value="1.7">C-</option>
+                            <option value="1.3">C+</option>
+                            <option value="1">C</option>
+                            <option value="0">E</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>GUI Application Development</td>
+                    <td>
+                        <select class="form-control" id="grade8">
+                            <option value="0">Select grade</option>
+                            <option value="4.0">A+</option>
+                            <option value="4.0">A</option>
+                            <option value="3.7">A-</option>
+                            <option value="3.3">B+</option>
+                            <option value="3">B</option>
+                            <option value="2.7">B-</option>
+                            <option value="2.3">C+</option>
+                            <option value="2">C</option>
+                            <option value="1.7">C-</option>
+                            <option value="1.3">C+</option>
+                            <option value="1">C</option>
+                            <option value="0">E</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Software Engineering</td>
+                    <td>
+                        <select class="form-control" id="grade9">
+                            <option value="0">Select grade</option>
+                            <option value="4.0">A+</option>
+                            <option value="4.0">A</option>
+                            <option value="3.7">A-</option>
+                            <option value="3.3">B+</option>
+                            <option value="3">B</option>
+                            <option value="2.7">B-</option>
+                            <option value="2.3">C+</option>
+                            <option value="2">C</option>
+                            <option value="1.7">C-</option>
+                            <option value="1.3">C+</option>
+                            <option value="1">C</option>
+                            <option value="0">E</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Enterprise Application Development-1</td>
+                    <td>
+                        <select class="form-control" id="grade10">
+                            <option value="0">Select grade</option>
+                            <option value="4.0">A+</option>
+                            <option value="4.0">A</option>
+                            <option value="3.7">A-</option>
+                            <option value="3.3">B+</option>
+                            <option value="3">B</option>
+                            <option value="2.7">B-</option>
+                            <option value="2.3">C+</option>
+                            <option value="2">C</option>
+                            <option value="1.7">C-</option>
+                            <option value="1.3">C+</option>
+                            <option value="1">C</option>
+                            <option value="0">E</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>Operating System</td>
+                    <td>
+                        <select class="form-control" id="grade11">
+                            <option value="0">Select grade</option>
+                            <option value="4.0">A+</option>
+                            <option value="4.0">A</option>
+                            <option value="3.7">A-</option>
+                            <option value="3.3">B+</option>
+                            <option value="3">B</option>
+                            <option value="2.7">B-</option>
+                            <option value="2.3">C+</option>
+                            <option value="2">C</option>
+                            <option value="1.7">C-</option>
+                            <option value="1.3">C+</option>
+                            <option value="1">C</option>
+                            <option value="0">E</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>Developing Modern Web</td>
+                    <td>
+                        <select class="form-control" id="grade12">
+                            <option value="0">Select grade</option>
+                            <option value="4.0">A+</option>
+                            <option value="4.0">A</option>
+                            <option value="3.7">A-</option>
+                            <option value="3.3">B+</option>
+                            <option value="3">B</option>
+                            <option value="2.7">B-</option>
+                            <option value="2.3">C+</option>
+                            <option value="2">C</option>
+                            <option value="1.7">C-</option>
+                            <option value="1.3">C+</option>
+                            <option value="1">C</option>
+                            <option value="0">E</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>Business Solution Development Project</td>
+                    <td>
+                        <select class="form-control" id="grade13">
+                            <option value="0">Select grade</option>
+                            <option value="4.0">A+</option>
+                            <option value="4.0">A</option>
+                            <option value="3.7">A-</option>
+                            <option value="3.3">B+</option>
+                            <option value="3">B</option>
+                            <option value="2.7">B-</option>
+                            <option value="2.3">C+</option>
+                            <option value="2">C</option>
+                            <option value="1.7">C-</option>
+                            <option value="1.3">C+</option>
+                            <option value="1">C</option>
+                            <option value="0">E</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
-    <div class="calculate-btn">
-        <button onclick="calculateGPA()">Calculate</button>
+        <div class="text-center mt-4">
+            <button class="btn btn-primary" onclick="calculateGPA()">Calculate</button>
+        </div>
+
+        <div class="text-center mt-4 display-4">
+            GPA: <span id="gpaResult" class="font-weight-bold display-4">0.00</span>
+        </div>
+        <div class="text-center mt-4">
+            <i><span id="motivationQuote" class="font-weight-italic">&#8203;</span></i>
+        </div>
+        
+        
     </div>
 
-    <div class="result-center">
-        GPA: <span id="gpaResult">0.00</span>
-    </div>
-
-    <script>
-        var initialGPA = 0.00;
-        var gpaResult = document.getElementById("gpaResult");
-        gpaResult.innerHTML = initialGPA.toFixed(2);
-    </script>
-
-    <div id="gpaResult"></div>
     <script>
         function calculateGPA() {
             var grade1 = 0;
@@ -414,6 +341,20 @@
             grade12 = document.getElementById("grade12").value;
             grade13 = document.getElementById("grade13").value;
 
+            grade1 = parseFloat(grade1);
+            grade2 = parseFloat(grade2);
+            grade3 = parseFloat(grade3);
+            grade4 = parseFloat(grade4);
+            grade5 = parseFloat(grade5);
+            grade6 = parseFloat(grade6);
+            grade7 = parseFloat(grade7);
+            grade8 = parseFloat(grade8);
+            grade9 = parseFloat(grade9);
+            grade10 = parseFloat(grade10);
+            grade11 = parseFloat(grade11);
+            grade12 = parseFloat(grade12);
+            grade13 = parseFloat(grade13);
+
             var credit1 = 3;
             var credit2 = 3;
             var credit3 = 3;
@@ -428,122 +369,44 @@
             var credit12 = 4;
             var credit13 = 3;
 
-            var gradePoints = {
-                "A+": 4.0,
-                "A": 4.0,
-                "A-": 3.7,
-                "B+": 3.3,
-                "B": 3,
-                "B-": 2.7,
-                "C+": 2.3,
-                "C": 2,
-                "C-": 1.7,
-                "D+": 1.3,
-                "D": 1,
-                "E": 0,
-            };
-
-            var totalCredits = 0;
-
-            if (grade1 in gradePoints) {
-                totalCredits += credit1;
-            }
-            if (grade2 in gradePoints) {
-                totalCredits += credit2;
-            }
-            if (grade3 in gradePoints) {
-                totalCredits += credit3;
-            }
-            if (grade4 in gradePoints) {
-                totalCredits += credit4;
-            }
-            if (grade5 in gradePoints) {
-                totalCredits += credit5;
-            }
-            if (grade6 in gradePoints) {
-                totalCredits += credit6;
-            }
-            if (grade7 in gradePoints) {
-                totalCredits += credit7;
-            }
-            if (grade8 in gradePoints) {
-                totalCredits += credit8;
-            }
-            if (grade9 in gradePoints) {
-                totalCredits += credit9;
-            }
-            if (grade10 in gradePoints) {
-                totalCredits += credit10;
-            }
-            if (grade11 in gradePoints) {
-                totalCredits += credit11;
-            }
-            if (grade12 in gradePoints) {
-                totalCredits += credit12;
-            }
-            if (grade13 in gradePoints) {
-                totalCredits += credit13;
-            }
-
-
-
+            var totalCredits = 45;
             var totalGradePoints = 0;
 
-            if (grade1 in gradePoints) {
-                totalGradePoints += gradePoints[grade1] * credit1;
-            }
-            if (grade2 in gradePoints) {
-                totalGradePoints += gradePoints[grade2] * credit2;
-            }
-            if (grade3 in gradePoints) {
-                totalGradePoints += gradePoints[grade3] * credit3;
-            }
-            if (grade4 in gradePoints) {
-                totalGradePoints += gradePoints[grade4] * credit4;
-            }
-            if (grade5 in gradePoints) {
-                totalGradePoints += gradePoints[grade5] * credit5;
-            }
-            if (grade6 in gradePoints) {
-                totalGradePoints += gradePoints[grade6] * credit6;
-            }
-            if (grade7 in gradePoints) {
-                totalGradePoints += gradePoints[grade7] * credit7;
-            }
-            if (grade8 in gradePoints) {
-                totalGradePoints += gradePoints[grade8] * credit8;
-            }
-            if (grade9 in gradePoints) {
-                totalGradePoints += gradePoints[grade9] * credit9;
-            }
-            if (grade10 in gradePoints) {
-                totalGradePoints += gradePoints[grade10] * credit10;
-            }
-            if (grade11 in gradePoints) {
-                totalGradePoints += gradePoints[grade11] * credit11;
-            }
-            if (grade12 in gradePoints) {
-                totalGradePoints += gradePoints[grade12] * credit12;
-            }
-            if (grade13 in gradePoints) {
-                totalGradePoints += gradePoints[grade13] * credit13;
-            }
+            totalGradePoints = (grade1*credit1) + (grade2*credit2) + (grade3*credit3) + (grade4*credit4) + ( grade5*credit5)
+            + (grade6*credit6) + (grade7*credit7) + ( grade8*credit8) + (grade9*credit9) + (grade10*credit10) + ( grade11*credit11)
+            + (grade12*credit12) + ( grade13*credit13);
 
             var gpa = totalGradePoints / totalCredits;
 
             var gpaResult = document.getElementById("gpaResult");
             gpaResult.innerHTML = gpa.toFixed(2);
-            gpaResult.classList.add("result-center");
+
+            var motivation = "";
+
+            if (gpa === 4.0) {
+                motivation = "\"4.0 GPA unlocked! Your academic level: Legendary.\"";
+            } else if (gpa > 3.5 && gpa < 3.99) {
+                motivation = "\"Your GPA is like a trending hashtag - everyone wants to follow. Keep the momentum!\"";
+            } else if (gpa >= 3.0 && gpa < 3.49) {
+                motivation = "\"Solid effort, solid GPA - you're the playlist everyone can groove to. Keep the rhythm!\"";
+            } else if (gpa >= 2.5 && gpa < 2.99) {
+                motivation = "\"Progress in the GPA game - you're leveling up. Keep unlocking those achievements!\"";
+            } else if (gpa >= 1.5 && gpa < 2.49) {
+                motivation = "\"Growth happens in every stumble - keep tripping forward, you're making progress!\"";
+            } else if (gpa < 1.49) {
+                motivation = "\"Bravo six, Going dark - time for a GPA comeback mission. Your success story starts now!\"";
+            }
+
+            var quote = document.getElementById("motivationQuote");
+            quote.innerHTML = motivation;
         }
     </script>
-    <footer>
-        <div class="footer-content">
-            <div class="text">Developed by: <a href="https://web.facebook.com/profile.php?id=100071239663932"
-                    target="_blank"><b>@dinith__M</b></a> |
-                <a href="https://wa.me/+94756721916" target="_blank"><b>WhatsApp</b></a>
-            </div>
-        </div>
-    </footer>
 </body>
-
+<footer class="footer text-center mt-4">
+    <div class="footer-content">
+        <div class="text small">
+            Developed by: <a href="https://github.com/dinithmaleesha" target="_blank"><b>@dinith__M</b></a> | DSE221F
+        </div>
+    </div>
+</footer>
 </html>
