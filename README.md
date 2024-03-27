@@ -13,4 +13,4 @@ Visit the [GPA Calculator | DSE](https://dinithmaleesha.github.io/gpa-calculator
 
 
 
-Thank you for using the NIBM Diploma in Software Engineering GPA Calculator! 🎓✨
+Thank you for using the my GPA Calculator! 🎓✨
